@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Freelance Rate Calculator | Calculate Your Ideal Hourly Rate</title>
+
+  <meta
+    name="description"
+    content="Calculate the freelance hourly, daily, weekly, monthly, and annual revenue you need to reach your desired take-home income."
+  >
+
+  <meta
+    name="keywords"
+    content="freelance rate calculator, freelancer hourly rate calculator, freelance pricing calculator, freelancer income calculator, freelance daily rate"
+  >
+
+  <meta name="author" content="Freelance Rate Calculator">
+
+  <meta
+    property="og:title"
+    content="Freelance Rate Calculator"
+  >
+
+  <meta
+    property="og:description"
+    content="Find the freelance rate you need to reach your desired take-home income."
+  >
+
+  <meta
+    property="og:type"
+    content="website"
+  >
+
+  <meta
+    name="twitter:card"
+    content="summary"
+  >
+
+  <meta
+    name="twitter:title"
+    content="Freelance Rate Calculator"
+  >
+
+  <meta
+    name="twitter:description"
+    content="Calculate the hourly, daily, weekly, monthly, and annual revenue you need as a freelancer."
+  >
+
+  <!-- Main stylesheet — will be created next -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- JavaScript — will be created after the CSS -->
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+
+  <!-- =========================================================
+       PAGE HEADER / NAVIGATION
+       ========================================================= -->
+
+  <header class="site-header">
+    <div class="container header-inner">
+
+      <a
+        href="#top"
+        class="site-logo"
+        aria-label="Freelance Rate Calculator home"
+      >
+        Freelance Rate Calculator
+      </a>
+
+      <nav
+        class="main-navigation"
+        aria-label="Main navigation"
+      >
+        <a href="#calculator">Calculator</a>
+        <a href="#how-it-works">How it works</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <main id="top">
+
+    <!-- =======================================================
+         HERO / LANDING SECTION
+         ======================================================= -->
+
+    <section
+      class="hero"
+      aria-labelledby="hero-title"
+    >
+
+      <div class="container hero-content">
+
+        <p class="eyebrow">
+          Free freelancer pricing tool
+        </p>
+
+        <h1 id="hero-title">
+          Know exactly what you need to charge.
+        </h1>
+
+        <p class="hero-description">
+          Stop guessing your freelance rate. Enter your income goal,
+          working schedule, expenses, and tax estimate to calculate
+          the revenue and rates you need to make your business work.
+        </p>
+
+        <a
+          href="#calculator"
+          class="button button-primary hero-cta"
+        >
+          Calculate my rate
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- =======================================================
+         CALCULATOR SECTION
+         ======================================================= -->
+
+    <section
+      id="calculator"
+      class="calculator-section"
+      aria-labelledby="calculator-title"
+    >
+
+      <div class="container">
+
+        <div class="section-heading">
+          <p class="eyebrow">
+            Your numbers
+          </p>
+
+          <h2 id="calculator-title">
+            Calculate your freelance rate
+          </h2>
+
+          <p>
+            Adjust any number below. Your results will update instantly.
+          </p>
+        </div>
+
+
+        <div class="calculator-layout">
+
+          <!-- ================================================
+               INPUT PANEL
+               ================================================ -->
+
+          <div class="calculator-inputs">
+
+            <form
+              id="rate-calculator-form"
+              class="calculator-form"
+              novalidate
+            >
+
+              <!-- Desired annual take-home income -->
+
+              <div class="form-group">
+
+                <label for="annual-income">
+                  Desired annual take-home income
+                </label>
+
+                <p
+                  id="annual-income-help"
+                  class="input-help"
+                >
+                  How much money you want to personally take home
+                  after business expenses and estimated taxes.
+                </p>
+
+                <div class="input-with-prefix">
+
+                  <span
+                    class="input-prefix"
+                    aria-hidden="true"
+                  >
+                    $
+                  </span>
+
+                  <input
+                    type="number"
+                    id="annual-income"
+                    name="annualIncome"
+                    value="60000"
+                    min="0"
+                    step="1000"
+                    inputmode="decimal"
+                    aria-describedby="annual-income-help"
+                    autocomplete="off"
+                  >
+
+                </div>
+
+              </div>
+
+
+              <!-- Working weeks per year -->
+
+              <div class="form-group">
+
+                <label for="working-weeks">
+                  Working weeks per year
+                </label>
+
+                <p
+                  id="working-weeks-help"
+                  class="input-help"
+                >
+                  The number of weeks you expect to work during the year.
+                  This allows for holidays, vacation, and time off.
+                </p>
+
+                <div class="input-with-suffix">
+
+                  <input
+                    type="number"
+                    id="working-weeks"
+                    name="workingWeeks"
+                    value="48"
+                    min="1"
+                    max="52"
+                    step="1"
+                    inputmode="numeric"
+                    aria-describedby="working-weeks-help"
+                    autocomplete="off"
+                  >
+
+                  <span
+                    class="input-suffix"
+                    aria-hidden="true"
+                  >
+                    weeks
+                  </span>
+
+                </div>
+
+              </div>
+
+
+              <!-- Hours worked per week -->
+
+              <div class="form-group">
+
+                <label for="hours-per-week">
+                  Hours worked per week
+                </label>
+
+                <p
+                  id="hours-per-week-help"
+                  class="input-help"
+                >
+                  Your total working hours per week, including
+                  client work and non-billable business activities.
+                </p>
+
+                <div class="input-with-suffix">
+
+                  <input
+                    type="number"
+                    id="hours-per-week"
+                    name="hoursPerWeek"
+                    value="40"
+                    min="1"
+                    max="168"
+                    step="1"
+                    inputmode="numeric"
+                    aria-describedby="hours-per-week-help"
+                    autocomplete="off"
+                  >
+
+                  <span
+                    class="input-suffix"
+                    aria-hidden="true"
+                  >
+                    hours
+                  </span>
+
+                </div>
+
+              </div>
+
+
+              <!-- Billable percentage -->
+
+              <div class="form-group">
+
+                <label for="billable-percentage">
+                  Billable working hours
+                </label>
+
+                <p
+                  id="billable-percentage-help"
+                  class="input-help"
+                >
+                  The percentage of your working time you can actually
+                  invoice to clients. The rest may go toward sales,
+                  admin, marketing, accounting, and other business tasks.
+                </p>
+
+                <div class="input-with-suffix">
+
+                  <input
+                    type="number"
+                    id="billable-percentage"
+                    name="billablePercentage"
+                    value="70"
+                    min="1"
+                    max="100"
+                    step="1"
+                    inputmode="numeric"
+                    aria-describedby="billable-percentage-help"
+                    autocomplete="off"
+                  >
+
+                  <span
+                    class="input-suffix"
+                    aria-hidden="true"
+                  >
+                    %
+                  </span>
+
+                </div>
+
+              </div>
+
+
+              <!-- Annual business expenses -->
+
+              <div class="form-group">
+
+                <label for="annual-expenses">
+                  Annual business expenses
+                </label>
+
+                <p
+                  id="annual-expenses-help"
+                  class="input-help"
+                >
+                  Your estimated yearly business costs, such as software,
+                  equipment, insurance, accounting, coworking, and marketing.
+                </p>
+
+                <div class="input-with-prefix">
+
+                  <span
+                    class="input-prefix"
+                    aria-hidden="true"
+                  >
+                    $
+                  </span>
+
+                  <input
+                    type="number"
+                    id="annual-expenses"
+                    name="annualExpenses"
+                    value="10000"
+                    min="0"
+                    step="500"
+                    inputmode="decimal"
+                    aria-describedby="annual-expenses-help"
+                    autocomplete="off"
+                  >
+
+                </div>
+
+              </div>
+
+
+              <!-- Estimated tax rate -->
+
+              <div class="form-group">
+
+                <label for="tax-rate">
+                  Estimated tax rate
+                </label>
+
+                <p
+                  id="tax-rate-help"
+                  class="input-help"
+                >
+                  Your estimated effective tax rate. This is a planning
+                  estimate, not personalized tax advice.
+                </p>
+
+                <div class="input-with-suffix">
+
+                  <input
+                    type="number"
+                    id="tax-rate"
+                    name="taxRate"
+                    value="25"
+                    min="0"
+                    max="99"
+                    step="1"
+                    inputmode="decimal"
+                    aria-describedby="tax-rate-help"
+                    autocomplete="off"
+                  >
+
+                  <span
+                    class="input-suffix"
+                    aria-hidden="true"
+                  >
+                    %
+                  </span>
+
+                </div>
+
+              </div>
+
+
+              <!-- Form status / validation area -->
+
+              <div
+                id="calculator-error"
+                class="calculator-error"
+                role="alert"
+                aria-live="polite"
+                hidden
+              ></div>
+
+
+              <!-- Reset button -->
+
+              <button
+                type="reset"
+                id="reset-calculator"
+                class="button button-secondary"
+              >
+                Reset calculator
+              </button>
+
+            </form>
+
+          </div>
+
+
+          <!-- ================================================
+               RESULTS PANEL
+               ================================================ -->
+
+          <aside
+            class="calculator-results"
+            aria-labelledby="results-title"
+          >
+
+            <div class="results-header">
+
+              <p class="eyebrow">
+                Your target
+              </p>
+
+              <h2 id="results-title">
+                Your freelance numbers
+              </h2>
+
+              <p>
+                These are the revenue and rates your business needs
+                to support your income goal.
+              </p>
+
+            </div>
+
+
+            <!-- Required annual revenue -->
+
+            <div class="result-card result-card-primary">
+
+              <span class="result-label">
+                Required annual revenue
+              </span>
+
+              <strong
+                id="annual-revenue"
+                class="result-value"
+                aria-live="polite"
+              >
+                $0
+              </strong>
+
+              <span class="result-description">
+                Revenue needed before your estimated taxes and business expenses.
+              </span>
+
+            </div>
+
+
+            <!-- Other results -->
+
+            <div class="results-grid">
+
+              <!-- Monthly -->
+
+              <div class="result-card">
+
+                <span class="result-label">
+                  Required monthly revenue
+                </span>
+
+                <strong
+                  id="monthly-revenue"
+                  class="result-value"
+                  aria-live="polite"
+                >
+                  $0
+                </strong>
+
+              </div>
+
+
+              <!-- Weekly -->
+
+              <div class="result-card">
+
+                <span class="result-label">
+                  Required weekly revenue
+                </span>
+
+                <strong
+                  id="weekly-revenue"
+                  class="result-value"
+                  aria-live="polite"
+                >
+                  $0
+                </strong>
+
+              </div>
+
+
+              <!-- Hourly -->
+
+              <div class="result-card">
+
+                <span class="result-label">
+                  Required hourly billable rate
+                </span>
+
+                <strong
+                  id="hourly-rate"
+                  class="result-value"
+                  aria-live="polite"
+                >
+                  $0
+                </strong>
+
+                <span class="result-description">
+                  Per billable hour.
+                </span>
+
+              </div>
+
+
+              <!-- Daily -->
+
+              <div class="result-card">
+
+                <span class="result-label">
+                  Required daily rate
+                </span>
+
+                <strong
+                  id="daily-rate"
+                  class="result-value"
+                  aria-live="polite"
+                >
+                  $0
+                </strong>
+
+                <span class="result-description">
+                  Based on an 8-hour billable day.
+                </span>
+
+              </div>
+
+            </div>
+
+
+            <!-- Copy results -->
+
+            <div class="results-actions">
+
+              <button
+                type="button"
+                id="copy-results"
+                class="button button-primary button-full"
+              >
+                Copy results
+              </button>
+
+              <p
+                id="copy-status"
+                class="copy-status"
+                role="status"
+                aria-live="polite"
+              ></p>
+
+            </div>
+
+
+            <!-- Calculation note -->
+
+            <div class="calculation-note">
+
+              <p>
+                <strong>Important:</strong>
+                This calculator is designed for planning purposes.
+                Your actual tax obligations and business costs may differ.
+                Consider speaking with a qualified tax professional about
+                your specific situation.
+              </p>
+
+            </div>
+
+          </aside>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =======================================================
+         HOW IT WORKS
+         ======================================================= -->
+
+    <section
+      id="how-it-works"
+      class="how-it-works-section"
+      aria-labelledby="how-it-works-title"
+    >
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <p class="eyebrow">
+            Simple math
+          </p>
+
+          <h2 id="how-it-works-title">
+            Your rate should work backwards from your goals.
+          </h2>
+
+          <p>
+            Freelancers often start with an hourly rate and hope it
+            produces enough income. This calculator does the opposite:
+            it starts with what you need to earn and works backwards.
+          </p>
+
+        </div>
+
+
+        <div class="explanation-grid">
+
+          <article class="explanation-card">
+
+            <div
+              class="explanation-number"
+              aria-hidden="true"
+            >
+              01
+            </div>
+
+            <h3>
+              Start with take-home income
+            </h3>
+
+            <p>
+              Tell us how much money you want to personally take home
+              each year after business costs and estimated taxes.
+            </p>
+
+          </article>
+
+
+          <article class="explanation-card">
+
+            <div
+              class="explanation-number"
+              aria-hidden="true"
+            >
+              02
+            </div>
+
+            <h3>
+              Account for your business
+            </h3>
+
+            <p>
+              Your business has expenses, and not every hour you work
+              can be billed to a client. The calculator accounts for both.
+            </p>
+
+          </article>
+
+
+          <article class="explanation-card">
+
+            <div
+              class="explanation-number"
+              aria-hidden="true"
+            >
+              03
+            </div>
+
+            <h3>
+              Find your real rate
+            </h3>
+
+            <p>
+              Your required revenue is translated into monthly, weekly,
+              hourly, and daily targets you can use when pricing your work.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =======================================================
+         INPUT EXPLANATIONS
+         ======================================================= -->
+
+    <section
+      class="inputs-explained-section"
+      aria-labelledby="inputs-explained-title"
+    >
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <p class="eyebrow">
+            Know your numbers
+          </p>
+
+          <h2 id="inputs-explained-title">
+            What should you enter?
+          </h2>
+
+          <p>
+            You don't need perfect numbers. Reasonable estimates are
+            enough to create a useful starting point.
+          </p>
+
+        </div>
+
+
+        <div class="input-explanation-list">
+
+          <article class="input-explanation">
+
+            <h3>
+              Desired annual take-home income
+            </h3>
+
+            <p>
+              Think about the amount you want available to pay yourself
+              and support your personal life. Enter this as an annual amount.
+            </p>
+
+            <p>
+              <strong>Example:</strong>
+              If you want to take home $60,000 per year, enter $60,000.
+            </p>
+
+          </article>
+
+
+          <article class="input-explanation">
+
+            <h3>
+              Working weeks per year
+            </h3>
+
+            <p>
+              You probably won't work all 52 weeks of the year.
+              Subtract holidays, vacations, sick days, and other planned
+              breaks from your expected working year.
+            </p>
+
+            <p>
+              <strong>Example:</strong>
+              48 weeks gives you roughly four weeks away from work.
+            </p>
+
+          </article>
+
+
+          <article class="input-explanation">
+
+            <h3>
+              Hours worked per week
+            </h3>
+
+            <p>
+              Include all the time you spend working on your freelance
+              business, not just the time spent with clients.
+            </p>
+
+            <p>
+              <strong>Example:</strong>
+              A freelancer might work 40 hours per week but only bill
+              clients for a portion of those hours.
+            </p>
+
+          </article>
+
+
+          <article class="input-explanation">
+
+            <h3>
+              Billable working hours
+            </h3>
+
+            <p>
+              This is one of the most important numbers in the calculator.
+              It represents how much of your total working time can actually
+              be charged to clients.
+            </p>
+
+            <p>
+              <strong>Example:</strong>
+              If you work 40 hours but can invoice about 28 of them,
+              your billable percentage is 70%.
+            </p>
+
+          </article>
+
+
+          <article class="input-explanation">
+
+            <h3>
+              Annual business expenses
+            </h3>
+
+            <p>
+              Include recurring and expected costs such as software,
+              equipment, insurance, accounting, advertising, education,
+              coworking, and other business expenses.
+            </p>
+
+          </article>
+
+
+          <article class="input-explanation">
+
+            <h3>
+              Estimated tax rate
+            </h3>
+
+            <p>
+              Use an estimated effective tax rate rather than your
+              highest marginal tax bracket. If you're unsure, use a
+              conservative planning estimate and update it later.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =======================================================
+         CTA
+         ======================================================= -->
+
+    <section
+      class="cta-section"
+      aria-labelledby="cta-title"
+    >
+
+      <div class="container">
+
+        <div class="cta-card">
+
+          <p class="eyebrow">
+            Take control of your freelance business
+          </p>
+
+          <h2 id="cta-title">
+            Get the complete freelancer financial dashboard
+          </h2>
+
+          <p>
+            Go beyond your hourly rate. Track income goals, expenses,
+            taxes, savings, profitability, cash flow, and the numbers
+            that actually matter to your freelance business.
+          </p>
+
+          <a
+            href="#"
+            class="button button-primary cta-button"
+            id="dashboard-cta"
+          >
+            Get the complete freelancer financial dashboard
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =======================================================
+         FAQ
+         ======================================================= -->
+
+    <section
+      id="faq"
+      class="faq-section"
+      aria-labelledby="faq-title"
+    >
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <p class="eyebrow">
+            Frequently asked questions
+          </p>
+
+          <h2 id="faq-title">
+            Freelance rate calculator FAQ
+          </h2>
+
+        </div>
+
+
+        <div class="faq-list">
+
+          <details class="faq-item">
+
+            <summary>
+              How much should I charge as a freelancer?
+            </summary>
+
+            <div class="faq-answer">
+
+              <p>
+                Your ideal rate depends on your income target, business
+                expenses, taxes, available working time, and the percentage
+                of your time that can actually be billed to clients.
+                That's why a rate that works for one freelancer may be
+                completely unsuitable for another.
+              </p>
+
+            </div>
+
+          </details>
+
+
+          <details class="faq-item">
+
+            <summary>
+              What is a good billable percentage?
+            </summary>
+
+            <div class="faq-answer">
+
+              <p>
+                There is no universal number. Your billable percentage
+                depends on how much time you spend on client work compared
+                with sales, administration, marketing, professional
+                development, meetings, and other non-billable activities.
+                Using a realistic estimate is more useful than assuming
+                every working hour can be invoiced.
+              </p>
+
+            </div>
+
+          </details>
+
+
+          <details class="faq-item">
+
+            <summary>
+              Why isn't my hourly rate based on 2,080 hours?
+            </summary>
+
+            <div class="faq-answer">
+
+              <p>
+                A traditional full-time employee may use roughly 2,080
+                working hours as a starting point. Freelancers generally
+                cannot bill every working hour, however. Vacation, holidays,
+                administration, marketing, sales, and other business tasks
+                reduce the number of hours that can actually generate revenue.
+              </p>
+
+            </div>
+
+          </details>
+
+
+          <details class="faq-item">
+
+            <summary>
+              Should I include taxes in my freelance rate?
+            </summary>
+
+            <div class="faq-answer">
+
+              <p>
+                Yes. Your rate needs to generate enough revenue to cover
+                your desired take-home income, business expenses, and
+                estimated tax obligations. This calculator uses your
+                estimated tax rate to work backwards from your target
+                take-home income.
+              </p>
+
+            </div>
+
+          </details>
+
+
+          <details class="faq-item">
+
+            <summary>
+              Should business expenses be included in my target revenue?
+            </summary>
+
+            <div class="faq-answer">
+
+              <p>
+                Yes. Business expenses reduce the amount of revenue that
+                ultimately becomes available to you. Including them gives
+                you a more realistic picture of the revenue your freelance
+                business needs to generate.
+              </p>
+
+            </div>
+
+          </details>
+
+
+          <details class="faq-item">
+
+            <summary>
+              Is this calculator tax advice?
+            </summary>
+
+            <div class="faq-answer">
+
+              <p>
+                No. This is a planning and estimation tool. Tax rules,
+                deductions, business structures, and personal circumstances
+                vary by location and individual situation. Consult a
+                qualified tax professional for advice specific to you.
+              </p>
+
+            </div>
+
+          </details>
+
+
+          <details class="faq-item">
+
+            <summary>
+              Can I use the result as my client-facing rate?
+            </summary>
+
+            <div class="faq-answer">
+
+              <p>
+                The calculated hourly rate is a useful financial floor,
+                but it does not necessarily have to be your final client
+                price. You may charge more depending on your experience,
+                specialization, demand, value delivered, project complexity,
+                and market positioning.
+              </p>
+
+            </div>
+
+          </details>
+
+
+          <details class="faq-item">
+
+            <summary>
+              What if I don't know my exact expenses or tax rate?
+            </summary>
+
+            <div class="faq-answer">
+
+              <p>
+                Start with your best reasonable estimate. The purpose of
+                the calculator is to help you understand the relationship
+                between your assumptions and your required rate. You can
+                return later and update the numbers as you learn more.
+              </p>
+
+            </div>
+
+          </details>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================================================
+       FOOTER
+       ========================================================= -->
+
+  <footer class="site-footer">
+
+    <div class="container footer-inner">
+
+      <div class="footer-brand">
+
+        <a
+          href="#top"
+          class="site-logo"
+        >
+          Freelance Rate Calculator
+        </a>
+
+        <p>
+          A simple tool for understanding what your freelance business
+          needs to earn.
+        </p>
+
+      </div>
+
+
+      <nav
+        class="footer-navigation"
+        aria-label="Footer navigation"
+      >
+
+        <a href="#calculator">
+          Calculator
+        </a>
+
+        <a href="#how-it-works">
+          How it works
+        </a>
+
+        <a href="#faq">
+          FAQ
+        </a>
+
+      </nav>
+
+
+      <div class="footer-legal">
+
+        <p>
+          &copy;
+          <span id="current-year">2026</span>
+          Freelance Rate Calculator.
+          All rights reserved.
+        </p>
+
+        <p>
+          For educational and planning purposes only.
+        </p>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =========================================================
+       NOSCRIPT MESSAGE
+       ========================================================= -->
+
+  <noscript>
+
+    <div class="noscript-message">
+      <p>
+        This calculator requires JavaScript to calculate your freelance
+        rates instantly. Please enable JavaScript in your browser.
+      </p>
+    </div>
+
+  </noscript>
+
+</body>
+</html>
